@@ -15,7 +15,7 @@ func Init() *sql.DB {
 		panic(fmt.Sprintf("Failed to connect to DB: %v", err))
 	}
 
-	createUsersTable := `
+  createUsersTable := `
     CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
         email TEXT NOT NULL UNIQUE,
@@ -23,6 +23,7 @@ func Init() *sql.DB {
         password TEXT NOT NULL,
         bio TEXT,
         avatar_url TEXT,
+        background_url TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );`
 
