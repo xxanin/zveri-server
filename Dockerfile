@@ -1,4 +1,4 @@
-# Build stage
+# build
 FROM golang:1.22 as build
 
 ENV GOTOOLCHAIN=auto
@@ -8,7 +8,7 @@ COPY . .
 
 RUN go build -o server ./cmd/server
 
-# Run stage
+# run
 FROM debian:bookworm-slim
 
 WORKDIR /app
